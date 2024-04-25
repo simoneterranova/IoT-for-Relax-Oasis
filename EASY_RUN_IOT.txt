@@ -1,0 +1,73 @@
+ANDARE NELLA CARTELLA CON I FILE DEL PROGETTO
+PS C:\Users\simon>
+cd .\Desktop\
+cd .\CODICI_18_04_24\
+cd .\CODICI\
+
+oppure
+PS C:\Users\simon>
+cd .\Desktop\; cd .\CODICI_18_04_24\; cd .\CODICI\
+
+
+
+----------------------- SETTING -----------------------
+
+
+------ SERVICE CATALOG SERVER
+cd .\Desktop\; cd .\CODICI_18_04_24\; cd .\CODICI\
+python service_catalog_server.py service_catalog_settings.json service_catalog_info.json
+
+
+------ RESOURCE CATALOG SERVER
+cd .\Desktop\; cd .\CODICI_18_04_24\; cd .\CODICI\
+python resource_catalog_server.py resource_catalog_users_1.json resource_catalog_devices_1.json resource_catalog_settings_1.json service_catalog_info.json
+
+------ NOISE SENSOR
+cd .\Desktop\; cd .\CODICI_18_04_24\; cd .\CODICI\
+python sensor_noise.py conf_noise.json service_catalog_info.json
+
+
+------ LIGHT SENSOR
+cd .\Desktop\; cd .\CODICI_18_04_24\; cd .\CODICI\
+python sensor_light.py conf_light.json service_catalog_info.json
+
+
+------ EVO SENSOR
+cd .\Desktop\; cd .\CODICI_18_04_24\; cd .\CODICI\
+python sensor_evo.py resource_catalog_users_1.json conf_evo.json service_catalog_info.json ML_GPT4.py configTHSubscriber.json
+
+
+------ DHT11 SENSOR
+cd .\Desktop\; cd .\CODICI_18_04_24\; cd .\CODICI\
+python sensor_th.py conf_temphum.json service_catalog_info.json
+
+cd .\Desktop\; cd .\CODICI_18_04_24\; cd .\CODICI\
+python sensor_th_e_ml_GPT4.py conf_temphum.json service_catalog_info.json combined_topic_config.json
+
+
+
+
+----------------------- POST PROCESSING -----------------------
+
+
+------ TELEGRAM BOT
+cd .\Desktop\; cd .\CODICI_18_04_24\; cd .\CODICI\
+python TelegramBot.py conf_bot_telegram.json service_catalog_info.json
+
+
+------ THINGSPEAK 
+cd .\Desktop\; cd .\CODICI_18_04_24\; cd .\CODICI\
+ThingSpeakAdaptor.py config.json service_catalog_info.json
+
+
+------ MACHINE LEARNING
+cd .\Desktop\; cd .\CODICI_18_04_24\; cd .\CODICI\
+python ML_GPT4.py configTHSubscriber.json
+
+
+
+
+
+
+
+
